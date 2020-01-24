@@ -1,2 +1,2 @@
 # Tiny-Web-Server
-A tiny web server
+一个简单的web服务器，支持GET,POST,HEAD方法。
