@@ -55,7 +55,7 @@ extern char **environ; /* Defined by libc */
 
 /* Misc constants */
 #define	MAXLINE	 8192  /* Max text line length */
-#define MAXBUF   8192  /* Max I/O buffer size 8K*/
+#define MAXBUF   8192  /* Max I/O buffer size */
 #define LISTENQ  1024  /* Second argument to listen() */
 
 /* Our own error-handling functions */

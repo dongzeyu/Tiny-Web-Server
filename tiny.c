@@ -23,8 +23,13 @@ int main(int argc, char **argv)
         connfd = Accept(listenfd, (SA*)&clientaddr, &clientlen);
         Getnameinfo((SA*)&clientaddr, clientlen, hostname, MAXBUF, port, MAXBUF, 0);
         printf("Accepted connection from (%s, %s)\n", hostname, port);
-        doit(connfd);
-        echo(connfd);
+        
+        if(Fork() == 0){
+            Close(listenfd);
+            doit(connfd);
+            Close(connfd);
+            exit(0);
+        }
         Close(connfd);
     }
 }
